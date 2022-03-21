@@ -16,3 +16,7 @@
   color: white;
   background-color: black;
 }
+input {
+  display: block;
+  width: calc(100% - 3em);
+}
