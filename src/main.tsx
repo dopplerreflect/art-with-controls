@@ -4,32 +4,30 @@ import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom';
 import './index.css';
 import App from './App';
 
-const GalleryContent = import.meta.globEager('./gallery/*.tsx');
-const imageKeys = Object.keys(GalleryContent).map(s => s.match(/([-\w]+)\.tsx/)![1]);
-const images = Object.values(GalleryContent).map(v => v.default);
+const images = Object.values(import.meta.globEager('./gallery/*.tsx')).map(
+  module => module.default
+);
 
 const NoMatch = () => <div>Not Found</div>;
 
 const Image = () => {
-  const { image } = useParams();
-  if (!image || imageKeys.indexOf(image) < 0) return <NoMatch />;
+  const { imageName } = useParams();
+  const ImageFunction: React.FunctionComponent =
+    images.find(image => image.name === imageName) || NoMatch;
 
-  const Component: React.FunctionComponent = images[imageKeys.indexOf(image)];
   return (
     <div>
-      <Component />
+      <ImageFunction />
     </div>
   );
 };
-
-console.log(imageKeys);
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path='' element={<App />} />
-        <Route path={`:image`} element={<Image />} />
+        <Route path='' element={<App images={images} />} />
+        <Route path={`:imageName`} element={<Image />} />
         <Route path={'*'} element={<NoMatch />} />
       </Routes>
     </BrowserRouter>
