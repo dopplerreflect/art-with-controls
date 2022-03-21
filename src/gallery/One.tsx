@@ -19,7 +19,9 @@ const One = () => {
 
   return (
     <div className='Container'>
-      <Controls controls={controls} handleControlChange={handleControlChange} />
+      {showControls && (
+        <Controls controls={controls} handleControlChange={handleControlChange} />
+      )}
       <div className='Image' onClick={() => setShowControls(!showControls)}>
         <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'>
           <rect
