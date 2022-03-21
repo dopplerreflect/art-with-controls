@@ -1,4 +1,4 @@
-import { ChangeEventHandler, useRef } from 'react';
+import { ChangeEventHandler, ChangeEvent, useState, useReducer } from 'react';
 type ControlsProps = {
   controls: Controls;
   handleControlChange: ChangeEventHandler<HTMLInputElement>;
@@ -21,6 +21,25 @@ const Controls = ({ controls, handleControlChange }: ControlsProps) => {
       ))}
     </div>
   );
+};
+
+const reducer = (controls: Controls, action: ReducerAction) => {
+  const { control, value } = action;
+  const newControls: Controls = [
+    ...controls.filter(c => c.name !== control),
+    { ...controls.find(c => c.name === control)!, value },
+  ].sort((a, b) => (a.name > b.name ? 1 : -1));
+  return newControls;
+};
+
+export const useControls = (controlsInitialState: Controls) => {
+  const [showControls, setShowControls] = useState(false);
+
+  const [controls, dispatch] = useReducer(reducer, controlsInitialState);
+  const handleControlChange = (event: ChangeEvent<HTMLInputElement>) => {
+    dispatch({ control: event.target.name, value: Number(event.target.value) });
+  };
+  return { controls, handleControlChange, showControls, setShowControls };
 };
 
 export default Controls;

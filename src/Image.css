@@ -2,17 +2,16 @@
   background-color: black;
   overflow: hidden;
 }
-.Controls.hidden {
-  display: none;
+.Image {
+  max-height: 100vmin;
+  max-width: 100vmin;
 }
-
 .Controls {
   opacity: 50%;
   position: absolute;
   top: 0;
   left: 0;
-  width: 50vw;
-  /* height: 100vh; */
+  width: 100%;
   color: white;
   background-color: black;
 }

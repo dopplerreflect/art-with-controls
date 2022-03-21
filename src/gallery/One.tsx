@@ -1,6 +1,4 @@
-import { ChangeEvent, useReducer, useRef, useState } from 'react';
-import Controls from '../Controls';
-import reducer from '../reducer';
+import Controls, { useControls } from '../Controls';
 import '../Image.css';
 
 const controlsInitialState: Controls = [
@@ -9,13 +7,8 @@ const controlsInitialState: Controls = [
 ];
 
 const One = () => {
-  const [showControls, setShowControls] = useState(false);
-
-  const [controls, dispatch] = useReducer(reducer, controlsInitialState);
-
-  const handleControlChange = (event: ChangeEvent<HTMLInputElement>) => {
-    dispatch({ control: event.target.name, value: Number(event.target.value) });
-  };
+  const { controls, handleControlChange, showControls, setShowControls } =
+    useControls(controlsInitialState);
 
   return (
     <div className='Container'>
