@@ -1,7 +1,7 @@
-import { ChangeEventHandler, ChangeEvent, useState, useReducer } from 'react';
+import React, { useState, useReducer } from 'react';
 type ControlsProps = {
   controls: Controls;
-  handleControlChange: ChangeEventHandler<HTMLInputElement>;
+  handleControlChange: React.ChangeEventHandler<HTMLInputElement>;
 };
 
 const Controls = ({ controls, handleControlChange }: ControlsProps) => {
@@ -36,7 +36,7 @@ export const useControls = (controlsInitialState: Controls) => {
   const [showControls, setShowControls] = useState(false);
 
   const [controls, dispatch] = useReducer(reducer, controlsInitialState);
-  const handleControlChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleControlChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     dispatch({ control: event.target.name, value: Number(event.target.value) });
   };
   return { controls, handleControlChange, showControls, setShowControls };
