@@ -18,7 +18,7 @@ const Controls = ({ controls, handleControlChange }: ControlsProps) => {
               min={control.min}
               max={control.max}
               onChange={handleControlChange}
-              value={controls.find((c: Control) => c.name === control.name)!.value}
+              value={controls.value(control.name)}
             />
           </div>
           <div className='NumberControl'>
@@ -26,7 +26,7 @@ const Controls = ({ controls, handleControlChange }: ControlsProps) => {
               type='number'
               name={control.name}
               onChange={handleControlChange}
-              value={controls.find((c: Control) => c.name === control.name)!.value}
+              value={controls.value(control.name)}
             />
           </div>
         </div>
@@ -43,6 +43,12 @@ const reducer = (controls: Controls, action: ReducerAction) => {
   ].sort((a, b) => (a.name > b.name ? 1 : -1));
   return newControls;
 };
+
+Object.defineProperty(Array.prototype, 'value', {
+  value: function (name: String) {
+    return this.find((c: Control) => c.name === name)!.value;
+  },
+});
 
 export const useControls = (controlsInitialState: Controls) => {
   const [showControls, setShowControls] = useState(false);

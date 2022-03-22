@@ -5,6 +5,10 @@ type Control = {
   max: number;
 };
 
+interface Array<T> {
+  value(s: String): number | string | undefined;
+}
+
 type Controls = Control[];
 
 type ReducerAction = {
