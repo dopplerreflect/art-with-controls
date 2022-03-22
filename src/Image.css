@@ -14,25 +14,27 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 500px;
   color: white;
   background-color: black;
 }
+.Controls .Control {
+  display: flex;
+}
 .Controls .Control div {
-  display: inline-block;
 }
 .Control .Name {
-  width: 10vw;
+  width: 20%;
 }
 .Control .RangeControl {
-  width: 80vw;
+  flex: 1;
 }
 .Control .RangeControl input[type='range'] {
   width: 100%;
 }
 .Control .NumberControl {
-  width: 10vw;
+  width: 10%;
 }
 .Control .NumberControl input[type='number'] {
-  width: 80%;
+  width: calc(100% - 8px);
 }
