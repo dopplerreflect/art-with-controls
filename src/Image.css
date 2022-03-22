@@ -18,7 +18,21 @@
   color: white;
   background-color: black;
 }
-input {
-  display: block;
-  width: calc(100% - 3em);
+.Controls .Control div {
+  display: inline-block;
+}
+.Control .Name {
+  width: 10vw;
+}
+.Control .RangeControl {
+  width: 80vw;
+}
+.Control .RangeControl input[type='range'] {
+  width: 100%;
+}
+.Control .NumberControl {
+  width: 10vw;
+}
+.Control .NumberControl input[type='number'] {
+  width: 80%;
 }
