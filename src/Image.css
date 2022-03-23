@@ -6,8 +6,15 @@
 }
 .Image {
   flex: 1;
-  max-height: 100vmin;
-  max-width: 100vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  max-height: 100vh;
+  max-width: 100vw;
+}
+.Image svg {
+  max-height: 100vh;
 }
 .Controls {
   opacity: 50%;

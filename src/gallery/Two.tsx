@@ -4,7 +4,7 @@ import '../Image.css';
 const controlsInitialState: Controls = [
   { name: 'hue', min: 0, max: 359, value: 45 },
   { name: 'width', min: 200, max: 1920, value: 512 },
-  { name: 'height', min: 200, max: 1080, value: 512 },
+  { name: 'height', min: 200, max: 1080, value: 256 },
 ];
 
 const Two = () => {
