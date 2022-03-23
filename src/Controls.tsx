@@ -45,11 +45,13 @@ const reducer = (controls: Controls, action: ReducerAction) => {
   return newControls;
 };
 
-Object.defineProperty(Array.prototype, 'value', {
-  value: function (name: String) {
-    return this.find((c: Control) => c.name === name)!.value;
-  },
-});
+if (!Array.prototype.value) {
+  Object.defineProperty(Array.prototype, 'value', {
+    value: function (name: String) {
+      return this.find((c: Control) => c.name === name)!.value;
+    },
+  });
+}
 
 export const useControls = (controlsInitialState: Controls) => {
   const [showControls, setShowControls] = useState(false);
