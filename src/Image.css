@@ -17,7 +17,7 @@
   max-height: min(100vh, 100%);
 }
 .Controls {
-  opacity: 50%;
+  opacity: 75%;
   position: absolute;
   top: 0;
   left: 0;
