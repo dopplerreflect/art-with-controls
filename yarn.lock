@@ -250,6 +250,18 @@
     "@babel/helper-validator-identifier" "^7.16.7"
     to-fast-properties "^2.0.0"
 
+"@dopplerreflect/drawring-utils@^0.0.5":
+  version "0.0.5"
+  resolved "https://npm.pkg.github.com/download/@dopplerreflect/drawring-utils/0.0.5/7f69fc7af329d33a1b0628f3dd8796f6bfb421c878b67a5454bd7fe8c0539058#dd6dc6cc063ccf5c7f1da95d26f7adf2c9281e8e"
+  integrity sha512-q4BFAjCW/DOld3Ay2ioJYNiqI6X5SYKhrxUZ/OhCCWMn3kTG0SU9Zbdn1sf4PquAJAmD5S/3cjPkty8aNlxLxw==
+
+"@dopplerreflect/use-save-svg@^0.0.7":
+  version "0.0.7"
+  resolved "https://npm.pkg.github.com/download/@dopplerreflect/use-save-svg/0.0.7/472fd7be6cc2682f07d07b1b19ea11e631659374a61f9b186417cc79a64f6a46#5d859a88c2a073dfc031ac2212c07d54c2ee14e4"
+  integrity sha512-sA6zx3WvI4hOqBNJrMT/Pfp4mv37XbeOvbtDOkqfdV52tLKjqmBdM1S1Tk+7nnSHZsg2c2wEN1buTngKRQankw==
+  dependencies:
+    react "^17.0.2"
+
 "@jridgewell/resolve-uri@^3.0.3":
   version "3.0.5"
   resolved "https://registry.yarnpkg.com/@jridgewell/resolve-uri/-/resolve-uri-3.0.5.tgz#68eb521368db76d040a6315cdb24bf2483037b9c"
@@ -563,6 +575,11 @@ history@^5.2.0:
   integrity sha512-ZqaKwjjrAYUYfLG+htGaIIZ4nioX2L70ZUMIFysS3xvBsSG4x/n1V6TXV3N8ZYNuFGlDirFg32T7B6WOUPDYcQ==
   dependencies:
     "@babel/runtime" "^7.7.6"
+
+hsluv@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/hsluv/-/hsluv-0.1.0.tgz#29f40d49642bd56dd0c192122abcc723bb5c2d6c"
+  integrity sha512-ERcanKLAszD2XN3Vh5r5Szkrv9q0oSTudmP0rkiKAGM/3NMc9FLmMZBB7TSqTaXJfSDBOreYTfjezCOYbRKqlw==
 
 is-core-module@^2.8.1:
   version "2.8.1"
