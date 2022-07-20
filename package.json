@@ -8,7 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@dopplerreflect/drawring-utils": "^0.0.5",
+    "@dopplerreflect/drawring-utils": "^0.0.6",
     "@dopplerreflect/use-save-svg": "^0.0.7",
     "hsluv": "^0.1.0",
     "react": "^17.0.2",
